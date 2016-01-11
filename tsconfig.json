@@ -1,0 +1,36 @@
+{
+    "version": "1.6.2",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "listFiles": true,
+        "moduleResolution": "node",
+        "outDir": "dist"
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./typings/tsd.d.ts",
+        "./components/Todo.ts",
+        "./components/TodoList.ts",
+        "./components/Link.ts",
+        "./actions/TodosActions.ts",
+        "./actions/FilterActions.ts",
+        "./containers/App.ts",
+        "./containers/FilterLink.ts",
+        "./index.ts",
+        "./reducers/index.ts",
+        "./reducers/todos.ts",
+        "./store/configureStore.ts",
+        "./vendor.ts"
+    ]
+}
