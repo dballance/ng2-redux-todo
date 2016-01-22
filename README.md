@@ -3,10 +3,11 @@
 Example Angular2 + Redux Todo App
 
 ## Install
-
+```
 git clone https://github.com/dballance/ng2-redux-todo.git ng2-redux-todo
 cd ng2-redux-todo
 npm install && tsd install
+```
 (may need to install tsd globally if not installed already)
 
 ## ng2-redux
