@@ -1,4 +1,4 @@
-import { Component, View, Input, Inject } from 'angular2/core';
+import { Component, View, Input, Inject, OnInit, OnDestroy } from 'angular2/core';
 import { bindActionCreators } from 'redux';
 import * as FilterActions from '../actions/FilterActions';
 import { Link } from '../components/Link';
@@ -10,16 +10,16 @@ import { Link } from '../components/Link';
 @View({
     directives: [ Link ],
     template: `
-        <db-link 
+        <active-link 
             [active]="filter === visibilityFilter" 
             [text]="text"
             (click)="onClick($event)"
         >
             <ng-content></ng-content>
-        </db-link>
+        </active-link>
     `
 })
-export class FilterLink {
+export class FilterLink implements OnInit, OnDestroy {
   @Input() filter: string; 
   @Input() text: string;
   visibilityFilter: string;
@@ -27,9 +27,8 @@ export class FilterLink {
     
   protected unsubscribe: Function;
 
-  constructor( @Inject('ngRedux') ngRedux) {
-    this.unsubscribe = ngRedux.connect(this.mapState, this.mapDispatch)(this);
-    console.log("filterLink", this);
+  constructor(@Inject('ngRedux') private ngRedux) {
+
   }
   
   onClick(e) {
@@ -38,8 +37,12 @@ export class FilterLink {
          this.setVisibilityFilter(this.filter);
      }
   }
+  
+  ngOnInit() {
+    this.unsubscribe = this.ngRedux.connect(this.mapState, this.mapDispatch)(this);
+  }
 
-  onDestroy() {
+  ngOnDestroy() {
     this.unsubscribe();
   }
 

@@ -1,4 +1,4 @@
-import {Component, Inject} from 'angular2/core';
+import {Component, Inject, OnDestroy, ChangeDetectionStrategy} from 'angular2/core';
 import { bindActionCreators } from 'redux';
 import { TodoList } from '../components/TodoList';
 import { FilterLink } from './FilterLink';
@@ -14,26 +14,26 @@ import * as TodoActions from '../actions/TodosActions';
     >
     <button (click)="addTodo(newtodo.value); newtodo.value=''">Add</button>
     <todo-list 
-        [todos]="todos"
+        [todos]="getVisibleTodos(todos, visibilityFilter)"
         (onTodoClick)="toggleTodo($event)"
     ></todo-list>
     <div> Show: 
-        <filter-link filter="SHOW_ALL" text="All"></filter-link>
-        <filter-link filter="SHOW_ACTIVE" text="Active"></filter-link>
-        <filter-link filter="SHOW_COMPLETED" text="Completed"></filter-link>
+        <filter-link filter="SHOW_ALL" text="All">All</filter-link>
+        <filter-link filter="SHOW_ACTIVE" text="Active">Active</filter-link>
+        <filter-link filter="SHOW_COMPLETED" text="Completed">Completed</filter-link>
     </div>
   `,
-
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export default class App {
+export default class App implements OnDestroy {
 
   protected unsubscribe: Function;
 
   constructor( @Inject('ngRedux') ngRedux, @Inject('devTools') devTools) {
+      console.log('constructor called');
     devTools.start(ngRedux);
     this.unsubscribe = ngRedux.connect(this.mapStateToThis, this.mapDispatchToThis)(this);
-    console.log("state constructor", this["state"])
   }
   
   getVisibleTodos(todos: any[], filter: string) {
@@ -50,7 +50,11 @@ export default class App {
       }
   }
 
-  onDestroy() {
+  ngOnInit(){
+      console.log('oninit called');
+  }
+
+  ngOnDestroy() {
     this.unsubscribe();
   }
 

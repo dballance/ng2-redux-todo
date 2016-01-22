@@ -27,7 +27,6 @@
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
     "es7-reflect-metadata": "^1.4.0",
-    "immutable": "^3.7.6",
     "ng2-redux": "^2.0.0",
     "react": "^0.13.3",
     "redux": "^3.0.0",
