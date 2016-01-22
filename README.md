@@ -12,7 +12,7 @@ npm install && tsd install
 
 ## ng2-redux
 
-Interested in Angular2 + Redux -- be sure to check out @wbuchwalter/ng2-redux for the redux bindings used in thie example
+Interested in Angular2 + Redux -- be sure to check out [@wbuchwalter/ng2-redux] (@wbuchwalter/ng2-redux) for the redux bindings used in thie example
 
 ## License
 MIT
