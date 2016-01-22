@@ -1,4 +1,4 @@
-# ng2redux
+# ng2-redux-todo
 
 Example Angular2 + Redux Todo App
 
