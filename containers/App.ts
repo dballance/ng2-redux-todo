@@ -31,7 +31,6 @@ export default class App implements OnDestroy {
   protected unsubscribe: Function;
 
   constructor( @Inject('ngRedux') ngRedux, @Inject('devTools') devTools) {
-      console.log('constructor called');
     devTools.start(ngRedux);
     this.unsubscribe = ngRedux.connect(this.mapStateToThis, this.mapDispatchToThis)(this);
   }
@@ -48,10 +47,6 @@ export default class App implements OnDestroy {
               return todos.filter(t => !t.completed );
           }
       }
-  }
-
-  ngOnInit(){
-      console.log('oninit called');
   }
 
   ngOnDestroy() {
