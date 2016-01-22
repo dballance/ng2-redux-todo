@@ -1,7 +1,8 @@
 {
-  "name": "counter-redux",
+  "name": "ng-redux-todo",
   "version": "0.0.0",
-  "description": "Counter example for ng2-redux",
+  "description": "Todo example for Angular2 + Redux utilizing ng2-redux.",
+  "author": "Drew Ballance <dballance@gmail.com> (http://dballance.com)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -9,19 +10,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wbuchwalter/ng2-redux.git"
+    "url": "https://github.com/dballance/ng2-redux-todo.git"
   },
   "keywords": [
-    "angular",
+    "angular2",
     "redux",
     "ng2-redux",
     "webpack"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wbuchwalter/ng2-redux/issues"
+    "url": "https://github.com/dballance/ng-redux-todo/issues"
   },
-  "homepage": "https://github.com/wbuchwalter/ng2-redux#readme",
+  "homepage": "https://github.com/dballance/ng-redux-todo#readme",
   "dependencies": {
     "angular2": "^2.0.0-beta.0",
     "es6-promise": "^3.0.2",

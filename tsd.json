@@ -8,9 +8,6 @@
     "redux/redux.d.ts": {
       "commit": "fe563dff3428bac1260d1794e2c2ecf8f097535a"
     },
-    "es6-shim/es6-shim.d.ts": {
-      "commit": "dc9dabe74a5be62613b17a3605309783a12ff28a"
-    },
     "redux-logger/redux-logger.d.ts": {
       "commit": "fe563dff3428bac1260d1794e2c2ecf8f097535a"
     }
