@@ -20,9 +20,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dballance/ng-redux-todo/issues"
+    "url": "https://github.com/dballance/ng2-redux-todo/issues"
   },
-  "homepage": "https://github.com/dballance/ng-redux-todo#readme",
+  "homepage": "https://github.com/dballance/ng2-redux-todo#readme",
   "dependencies": {
     "angular2": "^2.0.0-beta.0",
     "es6-promise": "^3.0.2",
